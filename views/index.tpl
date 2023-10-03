@@ -23,7 +23,7 @@
 <h2> </h2>
 <table class="table responsive">
   <thead>
-    <tr>
+    <tr class = "boldText">
       <td>Server service</td>
       <td>Server IP</td>
       <td>Server name</td>
