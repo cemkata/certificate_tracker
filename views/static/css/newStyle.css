@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+.table td {
+  padding: 7px 10px;
+  border: 1px solid;
+}
+
+.word-break {
+  word-break: break-all;
+}
+
+.scroll-container {
+  overflow: auto;
+  margin-bottom: 40px;
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+
+.scroll {
+  margin: 0;
+}
+
+.scroll td:first-of-type {
+  position: sticky;
+  left: 0;
+  border-left: none;
+  background: #f4f4f4;
+  color: #212121;
+  font-weight: bold;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -1px;
+    height: 100%;
+    width: 1px;
+    background: #000;
+  }
+}
+
+.scroll td:last-of-type {
+  border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+  .responsive thead {
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+  }
+
+  .responsive tr {
+    display: block;
+    margin-bottom: 0.625em;
+	
+  }
+
+  .responsive td {
+    border: 1px solid;
+    border-bottom: none;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  .responsive td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .responsive td:last-child {
+    border-bottom: 1px solid;
+  }
+}
+
+input[type=button] {
+    width: 100%;
+    padding: 0.3em  0.02em;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btnGreen{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btnRed{
+    background-color: darkred;
+    color: white;
+}
+.btnBlue{
+    background-color: darkblue;
+    color: white;
+}
+
+.red{
+  color:windowtext;
+  text-align:left;
+  background:#EA9999;
+}
+
+.yellow{
+  color:windowtext;
+  text-align:left;
+  background:#F9CB9C;
+}
+
+.limeGreen{
+  color:windowtext;
+  text-align:left;
+  background:#B6D7A8;
+}
