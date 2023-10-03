@@ -128,3 +128,7 @@ input[type=button] {
   font-weight:700;
   text-align:left;
 }
+
+.sortable{
+  cursor: pointer;
+}

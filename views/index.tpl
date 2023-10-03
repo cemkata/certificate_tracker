@@ -5,6 +5,7 @@
 		<link rel="shortcut icon" href="/favicon.ico">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0;">
+		<script src="/static/js/scripts.js" type="text/javascript"></script>
 		<script>
 			function confirmEdit(qid) {
 				window.location.href = './editserver?id=' + qid;
@@ -21,15 +22,15 @@
 <h2>{{tittle}}</h2>
 <input type="button" class="btnGreen" onclick="self.location = '/addnewserver';" value="Add new server/certificate">
 <h2> </h2>
-<table class="table responsive">
+<table class="table responsive" id="myTable">
   <thead>
     <tr class = "boldText">
-      <td>Server service</td>
-      <td>Server IP</td>
-      <td>Server name</td>
-      <td>Cerificate by</td>
-      <td>Generated on</td>
-      <td>Valid to</td>
+      <td onclick="sortTable(0)" class="sortable">Server service</td>
+      <td onclick="sortTable(1)" class="sortable">Server IP</td>
+      <td onclick="sortTable(2)" class="sortable">Server name</td>
+      <td onclick="sortTable(3)" class="sortable">Cerificate by</td>
+      <td onclick="sortTable(4)" class="sortable">Generated on</td>
+      <td onclick="sortTable(5)" class="sortable">Valid to</td>
       <td>Edit</td>
       <td>Delete</td>
     </tr>
