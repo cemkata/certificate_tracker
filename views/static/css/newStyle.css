@@ -123,3 +123,8 @@ input[type=button] {
   text-align:left;
   background:#B6D7A8;
 }
+
+.boldText{
+  font-weight:700;
+  text-align:left;
+}
