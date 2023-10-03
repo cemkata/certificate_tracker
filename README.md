@@ -16,6 +16,8 @@ Edit the config.ini
 By default this tool will mark the expiring rows in yellow 30 days, before final date and in red 15 days, before final date.
 
 If you want to change this edit the libs/web/mainApp.py, you can change the following values:
+
 WARNING = 30
+
 ERROR = 15
 
