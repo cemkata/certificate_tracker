@@ -3,7 +3,7 @@
 
 web_Start = True
 
-ver = 1.0
+ver = 1.1
 projectName = "Certificates monitor"
 
 if web_Start:

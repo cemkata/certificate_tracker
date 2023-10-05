@@ -4,7 +4,7 @@
 		<link rel='stylesheet' href='/static/css/newStyle.css'>
 		<link rel="shortcut icon" href="/favicon.ico">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0;">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="/static/js/scripts.js" type="text/javascript"></script>
 		<script>
 			function confirmEdit(qid) {
