@@ -27,10 +27,10 @@ def index():
         delta = validto - today
         if delta.days <= ERROR:
             tmp['color'] = "red"
-            tmp ['service'] = '/!\ '+ tmp ['service']
+            tmp ['service'] = '/!\\ '+ tmp ['service']
         elif delta.days <= WARNING:
             tmp['color'] = "yellow"
-            tmp ['service'] = '\!/ '+ tmp ['service']
+            tmp ['service'] = '\\!/ '+ tmp ['service']
         else:
             tmp['color'] = "limeGreen"
         certificates.append(tmp)
@@ -137,8 +137,11 @@ def genUniqueID():
          return genUniqueID()
 
 def checkValues(server_ip, cert_from, cert_valid_to, certificate_by):
-    ip_pattern = re.compile('(?:^|\b(?<!\.))(?:1?\d\d?|2[0-4]\d|25[0-5])(?:\.(?:1?\d\d?|2[0-4]\d|25[0-5])){3}(?=$|[^\w.])')
+    ip_pattern = re.compile(r'(?:^|\b(?<!\.))(?:1?\d\d?|2[0-4]\d|25[0-5])(?:\.(?:1?\d\d?|2[0-4]\d|25[0-5])){3}(?=$|[^\w.])')
     if not ip_pattern.match(server_ip):
+        return True
+    elif server_ip.lower() == "localhost":
+        server_ip == server_ip.lower()
         return True
     if len(cert_from) !=3:
         return True
