@@ -21,4 +21,4 @@ You can chnage the name of the columns by editing the file names.json. You can n
 The server IP column can be used as id with format 0.0.0.1 and chnage the last digit.
 
 
-***Version***  * 1.2*  
+***Version 1.2***  
