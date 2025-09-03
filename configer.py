@@ -16,9 +16,18 @@ class __Configer:
             config = configparser.ConfigParser()
             config.read(fnameINI)
             self._port = config['DEFAULT']['Port']
+            try:
+                self._WARNING = int(config['DEFAULT']['YELLOW'])
+            except ValueError:
+                self._WARNING = 30
+            try:
+                self._CRITICAL = int(config['DEFAULT']['RED'])
+            except ValueError:
+                self._CRITICAL = 15
+            
             self._host = config['DEFAULT']['ip']
-            ip_pattern = re.compile('(?:^|\b(?<!\.))(?:1?\d\d?|2[0-4]\d|25[0-5])(?:\.(?:1?\d\d?|2[0-4]\d|25[0-5])){3}(?=$|[^\w.])')
-            if not ip_pattern.match(self._host):
+            ip_pattern = re.compile(r'(?:^|\b(?<!\.))(?:1?\d\d?|2[0-4]\d|25[0-5])(?:\.(?:1?\d\d?|2[0-4]\d|25[0-5])){3}(?=$|[^\w.])')
+            if not ip_pattern.match(self._host) or self._host.lower() == "localhost":
                 raise KeyError('Server IP address')
             self._dbpath = os.path.abspath(config['DEFAULT']['dbpath'])
 
@@ -37,6 +46,12 @@ class __Configer:
     @property
     def dbpath(self):
         return self._dbpath
+    @property
+    def WARNING(self):
+        return self._WARNING
+    @property
+    def CRITICAL(self):
+        return self._CRITICAL
 
 def init():
     global configuration

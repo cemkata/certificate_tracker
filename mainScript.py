@@ -3,7 +3,7 @@
 
 web_Start = True
 
-ver = 1.1
+ver = 1.2
 projectName = "Certificates monitor"
 
 if web_Start:
@@ -16,6 +16,9 @@ if web_Start:
  app = Bottle()
  rootApp = application = app
  config = configer.init()
+ 
+ mainApp.WARNING = config.WARNING
+ mainApp.ERROR = config.CRITICAL
  
  app.mount('/', staticFiles.app)
  app.mount('/', mainApp.app)

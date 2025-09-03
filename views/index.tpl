@@ -25,12 +25,24 @@
 <table class="table responsive" id="myTable">
   <thead>
     <tr class = "boldText">
-      <td onclick="sortTable(0)" class="sortable">Server service</td>
-      <td onclick="sortTable(1)" class="sortable">Server IP</td>
-      <td onclick="sortTable(2)" class="sortable">Server name</td>
-      <td onclick="sortTable(3)" class="sortable">Cerificate by</td>
-      <td onclick="sortTable(4)" class="sortable">Generated on</td>
-      <td onclick="sortTable(5)" class="sortable">Valid to</td>
+<%
+import json
+columm_names = []
+try:
+  file = open('names.json', 'r')
+  data = json.load(file)
+  columm_names = data['names']
+except:
+  pass
+end
+
+if len(columm_names) != 6:
+  columm_names = ['Server service', 'Server IP', 'Server name', 'Cerificate by', 'Generated on', 'Valid to']
+end
+%>
+      %for i, name in enumerate(columm_names):
+      <td onclick="sortTable({{i}})" class="sortable">{{name}}</td>
+      %end
       <td>Edit</td>
       <td>Delete</td>
     </tr>
