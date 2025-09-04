@@ -71,7 +71,7 @@ def edit():
     return template('add_edit', server_service=r[0], server_ip=r[1], server_name = r[2],\
         certificate_by = r[3], cert_from = from_date, cert_valid_to = to_date, cid = serverID)
 
-@app.route('/deeteserver')
+@app.route('/deleteserver')
 def delete():
     serverID = request.query.id or -1
     if serverID == -1:
