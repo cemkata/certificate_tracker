@@ -46,8 +46,8 @@ def edit():
     except ValueError:
         redirect("/")
     sql_str = f'''SELECT `server_service`, `server_ip`, `server_name`,
-`certificates_authority`, `generated_on_day`, `generated_on_month`, `generated_on_year`, `valid_to_day`,
-`valid_to_month`, `valid_to_year`, `id` FROM `certificates_info_tbl` where `id` = {serverID};'''
+`certificates_authority`, `generated_on_year`, `generated_on_month`, `generated_on_day`, `valid_to_year`,
+`valid_to_month`, `valid_to_day`, `id` FROM `certificates_info_tbl` where `id` = {serverID};'''
     r = execute_sql_statment(sql_str, SINGLE_ROW = True)
     from_date = ""
     to_date = ""
