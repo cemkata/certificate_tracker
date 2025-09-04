@@ -22,7 +22,7 @@ def index():
    today = datetime.datetime.today()
    tittle = f'''Certificates information table (generated on {today.strftime('%Y-%m-%d')})'''
    for r in rows:
-        tmp = {'service':r[0], 'ip':r[1], 'name': r[2], 'certauth':r[3], 'from':str(r[4])+"-"+str(r[5])+"-"+str(r[6]), 'to':str(r[7])+"-"+str(r[8])+"-"+str(r[9]), 'certId':r[10]}
+        tmp = {'service':r[0], 'ip':r[1], 'name': r[2], 'certauth':r[3], 'from':str(r[4])+"-"+str(r[5])+"-"+str(r[6]), 'to':str(r[9])+"-"+str(r[8])+"-"+str(r[7]), 'certId':r[10]}
         validto = datetime.datetime(r[7], r[8], r[9])
         delta = validto - today
         if delta.days <= ERROR:
