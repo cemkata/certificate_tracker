@@ -12,7 +12,7 @@
 			}
 			function confirmDelete(qid) {
 				if (confirm('Are you sure you want to delete this server/certificate?')) {
-				  window.location.href = './deeteserver?id=' + qid;
+				  window.location.href = './deleteserver?id=' + qid;
 				} 
 			}
 		</script>
